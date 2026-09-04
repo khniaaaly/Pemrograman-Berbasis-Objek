@@ -6,5 +6,22 @@ public class TestMahasiswa {
         mhs1.alamat="Jl. Vinolia No 1A";
         mhs1.kelas="1A";
         mhs1.tampilBiodata();
+        System.out.println("----------------------------");
+
+        Mahasiswa mhs2=new Mahasiswa();
+        mhs2.nim=102;
+        mhs2.nama="Andi";
+        mhs2.alamat="Jl. Mawar No 3A";
+        mhs2.kelas="1A";
+        mhs2.tampilBiodata();
+        System.out.println("----------------------------");
+
+        Mahasiswa mhs3=new Mahasiswa();
+        mhs3.nim=103;
+        mhs3.nama="Rania";
+        mhs3.alamat="Jl. Melati No 1C";
+        mhs3.kelas="1A";
+        mhs3.tampilBiodata();
+        System.out.println("----------------------------");
     }
 }
