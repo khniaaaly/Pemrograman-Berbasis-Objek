@@ -1,6 +1,6 @@
 public class Motorcycle {
-    public int kecepatan = 0;
-    public boolean kontakOn = false;
+    private int kecepatan = 0;
+    private boolean kontakOn = false;
     
     public void printStatus() {
         if (kontakOn == true) {
