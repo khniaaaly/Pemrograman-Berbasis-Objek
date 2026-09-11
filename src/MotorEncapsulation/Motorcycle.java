@@ -19,7 +19,11 @@ public class Motorcycle {
     }
     public void tambahKecepatan() {
         if (kontakOn == true) {
-            kecepatan += 5;
+            if (kecepatan < 100) {
+                kecepatan += 5;
+            } else {
+                System.out.println("Kecepatan maksimal adalah 100!");
+            }
         } else {
             System.out.println("Kecepatan tidak bisa bertambah karena Mesin off! \n");
         }
