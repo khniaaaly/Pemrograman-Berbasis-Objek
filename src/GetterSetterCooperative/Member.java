@@ -1,7 +1,7 @@
 public class Member {
-    public String nama;
-    public String alamat;
-    public float simpanan;
+    private String nama;
+    private String alamat;
+    private float simpanan;
 
     Member(String nama, String alamat) {
         this.nama = nama;
