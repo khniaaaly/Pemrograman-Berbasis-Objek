@@ -1,24 +1,41 @@
+import java.util.Scanner;
+
 public class TestLogistik {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         Kontainer kontainerAlfa = new Kontainer("REQ-9988", "PT. Maju Bersama", 5000);
+        int pilihan;
 
-        System.out.println("Nama Pemilik Kontainer: " + kontainerAlfa.getNamaPemilik());
+        System.out.println("Nama Pemilik Kontainer: " + kontainerAlfa.getNamaPemilik()); 
         System.out.println("Kapasitas Maksimal: " + kontainerAlfa.getKapasitasMaksimal() + " kg");
 
-        System.out.println("\nMemasukkan muatan baru seberat 6.000 kg...");
-        kontainerAlfa.tambahMuatan(6000);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
+        do {
+            System.out.println("\n=== MENU KONTAINER ===");
+            System.out.println("1. Tambah Muatan");
+            System.out.println("2. Turunkan Muatan");
+            System.out.println("3. Lihat Muatan Saat Ini");
+            System.out.println("4. Keluar");
+            System.out.print("Pilih menu: ");
+            pilihan = input.nextInt();
 
-        System.out.println("\nMemasukkan muatan baru seberat 4.000 kg...");
-        kontainerAlfa.tambahMuatan(4000);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
-
-        System.out.println("\nMembongkar muat/menurunkan barang seberat 500 kg...");
-        kontainerAlfa.turunkanMuatan(500);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
-
-        System.out.println("\nMembongkar muat/menurunkan barang seberat 1.500 kg...");
-        kontainerAlfa.turunkanMuatan(1500);
-        System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
+            if (pilihan == 1) {
+                System.out.print("Masukkan berat muatan yang ingin ditambahkan: ");
+                double tambah = input.nextDouble();
+                kontainerAlfa.tambahMuatan(tambah);
+                System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
+            } else if (pilihan == 2) {
+                System.out.print("Masukkan berat muatan yang ingin diturunkan: ");
+                double turun = input.nextDouble();
+                kontainerAlfa.turunkanMuatan(turun);
+                System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg");
+            } else if (pilihan == 3) {
+                System.out.println("Berat muatan saat ini: " + kontainerAlfa.getBeratMuatanSaatIni() + " kg"); 
+            } else if (pilihan == 4) {
+                System.out.println("Program selesai.");
+            } else {
+                System.out.println("Pilihan tidak tersedia.");
+            }
+        } while (pilihan != 4);
+        input.close();
     }
 }
