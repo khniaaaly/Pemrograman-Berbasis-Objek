@@ -1,6 +1,5 @@
 public class Demo1 {
     public static void main(String[] args) {
-
         Laptop laptop = new Laptop(
                 "ASUS",
                 2024,
